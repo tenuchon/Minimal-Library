@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Minimal Library</string>
+    <string name="about">О приложении</string>
+    <string name="add_favorites_snackbar">Добавлено в избранное</string>
+    <string name="app_version">Версия: %1$s</string>
+    <string name="author">Автор</string>
+    <string name="author_card_book">Автор</string>
+    <string name="button_add_photo">Добавить фото</string>
+    <string name="change_photo">Изменить фото</string>
+    <string name="contact_me">Вы можете связаться со мной по адресу</string>
+    <string name="dark_mode">Темная тема</string>
+    <string name="delete">Удалить</string>
+    <string name="delete_alert_dialog_message">Вы точно хотите удалить эту книгу?</string>
+    <string name="description">Описание</string>
+    <string name="details">Обзор</string>
+    <string name="edit">Изменить</string>
+    <string name="error_message_edit_text">Это поле не может быть пустым</string>
+    <string name="favorite">Избранное</string>
+    <string name="filter">Фильтр</string>
+    <string name="filter_by_author">По автору</string>
+    <string name="filter_by_date">По дате</string>
+    <string name="filter_by_title">По названию</string>
+    <string name="hint_search_view">Введите название книги</string>
+    <string name="library">Библиотека</string>
+    <string name="list_empty">Список пуст</string>
+    <string name="made_by">Разработал tenuchon</string>
+    <string name="more">Больше</string>
+    <string name="no">Нет</string>
+    <string name="removed_favorites_snackbar">Удалено из избранного</string>
+    <string name="save">Сохранить</string>
+    <string name="search">Поиск</string>
+    <string name="settings">Настройки</string>
+    <string name="share">Поделиться</string>
+    <string name="share_text">Название книги %1$s автор %2$s</string>
+    <string name="snackbar_removed_book">Это книга была удалена</string>
+    <string name="snackbar_undo">Отменить</string>
+    <string name="title">Название</string>
+    <string name="wish_list">Список желаемого</string>
+    <string name="yes">Да</string>
+</resources>

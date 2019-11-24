@@ -5,4 +5,11 @@
     <color name="colorAccent">#F9AA33</color>
     <color name="gray">#A29D9D</color>
     <color name="white">#FFFFFF</color>
+    <color name="deleteBackground">#ff5252</color>
+    <color name="bottomSheetDialog">#344955</color>
+    <color name="textButton">#344955</color>
+    <color name="button">#FFFFFF</color>
+    <color name="dialogButton">#344955</color>
+    <color name="snackbarButton">#F9AA33</color>
+    <color name="hintSearchView">#DFDFDF</color>
 </resources>
