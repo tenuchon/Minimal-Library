@@ -5,7 +5,7 @@
     <string name="add_favorites_snackbar">Добавлено в избранное</string>
     <string name="app_version">Версия: %1$s</string>
     <string name="author">Автор</string>
-    <string name="author_card_book">Автор</string>
+    <string name="author_card_book">Автор %1$s</string>
     <string name="button_add_photo">Добавить фото</string>
     <string name="change_photo">Изменить фото</string>
     <string name="contact_me">Вы можете связаться со мной по адресу</string>

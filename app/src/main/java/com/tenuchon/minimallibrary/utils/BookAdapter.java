@@ -73,6 +73,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> im
         book = books.get(position);
         bookDeletePosition = position;
         books.remove(position);
+        BookLab.get(rootLayout.getContext()).removeBook(book);
         notifyItemRemoved(position);
         showUndoSnackbar();
     }
@@ -88,19 +89,11 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> im
             }
         });
         snackbar.setActionTextColor(rootLayout.getContext().getResources().getColor(R.color.snackbarButton));
-        snackbar.addCallback(new Snackbar.Callback() {
-            @Override
-            public void onDismissed(Snackbar transientBottomBar, int event) {
-                super.onDismissed(transientBottomBar, event);
-                if (event != DISMISS_EVENT_ACTION) {
-                    BookLab.get(rootLayout.getContext()).removeBook(book);
-                }
-            }
-        });
         snackbar.show();
     }
 
     private void undoDelete() {
+        BookLab.get(rootLayout.getContext()).addBook(book);
         books.add(bookDeletePosition, book);
         notifyItemInserted(bookDeletePosition);
     }
