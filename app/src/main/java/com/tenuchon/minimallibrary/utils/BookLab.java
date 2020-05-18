@@ -28,7 +28,13 @@ public class BookLab {
     }
 
     public static BookLab get(Context context) {
-        if (bookLab == null) bookLab = new BookLab(context);
+        if (bookLab == null) {
+            synchronized (BookLab.class) {
+                if (bookLab == null) {
+                    bookLab = new BookLab(context);
+                }
+            }
+        }
         return bookLab;
     }
 

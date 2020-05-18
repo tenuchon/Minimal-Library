@@ -113,16 +113,16 @@ public abstract class BasicListFragment extends DefaultFragment implements View.
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.fab:
-                goToEditFragment();
-                break;
+        if (v.getId() == R.id.fab) {
+            goToEditFragment();
         }
     }
 
     private void goToEditFragment() {
-        getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                EditFragment.newInstance(getStringTag())).addToBackStack(EditFragment.TAG).commit();
+        if (getFragmentManager() != null) {
+            getFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    EditFragment.newInstance(getStringTag())).addToBackStack(EditFragment.TAG).commit();
+        }
     }
 
     @Override
@@ -149,6 +149,7 @@ public abstract class BasicListFragment extends DefaultFragment implements View.
                 searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
                     @Override
                     public boolean onQueryTextSubmit(String query) {
+
                         return false;
                     }
 
@@ -167,35 +168,36 @@ public abstract class BasicListFragment extends DefaultFragment implements View.
     }
 
     private void showPopupMenu() {
-        View itemMenuView = getActivity().findViewById(R.id.filter_list);
-        PopupMenu popupMenu = new PopupMenu(getActivity(), itemMenuView);
-        popupMenu.inflate(R.menu.popup_filter_menu);
-
-        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                List<Book> books = getBooks();
-                int sortMode = 1;
-                switch (item.getItemId()) {
-                    case R.id.filter_title_item:
-                        BookLab.get(getActivity()).getBooksSortedByTitle(books);
-                        sortMode = InitApplication.SORT_MODE_TITLE;
-                        break;
-                    case R.id.filter_author_item:
-                        BookLab.get(getActivity()).getBooksSortedByAuthor(books);
-                        sortMode = InitApplication.SORT_MODE_AUTHOR;
-                        break;
-                    case R.id.filter_date_item:
-                        BookLab.get(getActivity()).getBooksSortedByDate(books);
-                        sortMode = InitApplication.SORT_MODE_DATE;
-                        break;
+        if (getActivity() != null) {
+            View itemMenuView = getActivity().findViewById(R.id.filter_list);
+            PopupMenu popupMenu = new PopupMenu(getActivity(), itemMenuView);
+            popupMenu.inflate(R.menu.popup_filter_menu);
+            popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                @Override
+                public boolean onMenuItemClick(MenuItem item) {
+                    List<Book> books = getBooks();
+                    int sortMode = 1;
+                    switch (item.getItemId()) {
+                        case R.id.filter_title_item:
+                            BookLab.get(getActivity()).getBooksSortedByTitle(books);
+                            sortMode = InitApplication.SORT_MODE_TITLE;
+                            break;
+                        case R.id.filter_author_item:
+                            BookLab.get(getActivity()).getBooksSortedByAuthor(books);
+                            sortMode = InitApplication.SORT_MODE_AUTHOR;
+                            break;
+                        case R.id.filter_date_item:
+                            BookLab.get(getActivity()).getBooksSortedByDate(books);
+                            sortMode = InitApplication.SORT_MODE_DATE;
+                            break;
+                    }
+                    InitApplication.getInstance().setSortMode(sortMode);
+                    bookAdapter.setBooks(books);
+                    bookAdapter.notifyDataSetChanged();
+                    return true;
                 }
-                InitApplication.getInstance().setSortMode(sortMode);
-                bookAdapter.setBooks(books);
-                bookAdapter.notifyDataSetChanged();
-                return true;
-            }
-        });
-        popupMenu.show();
+            });
+            popupMenu.show();
+        }
     }
 }

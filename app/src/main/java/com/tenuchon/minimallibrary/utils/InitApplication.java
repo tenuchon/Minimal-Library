@@ -22,7 +22,11 @@ public class InitApplication extends Application {
     public static InitApplication getInstance() {
 
         if (singleton == null) {
-            singleton = new InitApplication();
+            synchronized (InitApplication.class) {
+                if (singleton == null) {
+                    singleton = new InitApplication();
+                }
+            }
         }
         return singleton;
     }
