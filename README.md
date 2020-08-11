@@ -1,14 +1,11 @@
 # Minimal-Library
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/200px-Google_Play_Store_badge_EN.svg.png" style="float: left; padding-right: 10px;" height="70">](https://play.google.com/store/apps/details?id=com.tenuchon.minimallibrary)
+<a href="https://play.google.com/store/apps/details?id=com.tenuchon.minimallibrary">
+<img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/apps/en-play-badge.png" height="50px"/></a>
 
 # Screenshots 
 
-<img src="/screenshots/add_dark.png" /> 
-<img src="/screenshots/add_light.png" /> 
-<img src="/screenshots/book_dark.png" /> 
-<img src="/screenshots/book_light.png" /> 
-<img src="/screenshots/list_dark.png" /> 
-<img src="/screenshots/list_light.png" /> 
-<img src="/screenshots/list_empty_dark.png" /> 
-<img src="/screenshots/list_empty_light.png" /> 
+<img src="/screenshots/add_dark.png" height=250 /> <img src="/screenshots/add_light.png" height=250 /> 
+<img src="/screenshots/book_dark.png" height=250 /> <img src="/screenshots/book_light.png" height=250 /> 
+<img src="/screenshots/list_dark.png" height=250 /> <img src="/screenshots/list_light.png" height=250 /> 
+<img src="/screenshots/list_empty_dark.png" height=250 /> <img src="/screenshots/list_empty_light.png" height=250 /> 
